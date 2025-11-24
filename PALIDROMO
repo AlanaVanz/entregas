@@ -1,0 +1,20 @@
+def eh_palindromo(texto):
+    texto = texto.replace(" ", "").lower()  # remove espaços e deixa tudo em minúsculo
+    return texto == texto[::-1]  # compara com a string invertida
+
+##TESTE
+
+import unittest
+
+class TestEhPalindromo(unittest.TestCase):
+    def test_palindromo_simples(self):
+        self.assertTrue(eh_palindromo("arara"))
+    
+    def test_palindromo_com_espacos_e_maiusculas(self):
+        self.assertTrue(eh_palindromo("A man a plan a canal Panama"))
+    
+    def test_nao_palindromo(self):
+        self.assertFalse(eh_palindromo("Python"))
+
+if __name__ == '__main__':
+    unittest.main()
