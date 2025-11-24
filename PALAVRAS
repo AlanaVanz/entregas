@@ -1,0 +1,36 @@
+def frequencia_palavras(texto):
+    texto = texto.lower()  # deixa tudo em minúsculas
+    palavras = texto.split()  # separa as palavras pelo espaço
+    freq = {}
+    for palavra in palavras:
+        if palavra in freq:
+            freq[palavra] += 1
+        else:
+            freq[palavra] = 1
+    return freq
+
+##TESTE
+
+import unittest
+
+class TestFrequenciaPalavras(unittest.TestCase):
+    def test_frequencia_basica(self):
+        self.assertEqual(
+            frequencia_palavras("gato cachorro gato"),
+            {"gato": 2, "cachorro": 1}
+        )
+
+    def test_palavras_com_maiusculas(self):
+        self.assertEqual(
+            frequencia_palavras("Gato gato GATO"),
+            {"gato": 3}
+        )
+
+    def test_frase_vazia(self):
+        self.assertEqual(
+            frequencia_palavras(""),
+            {}
+        )
+
+if __name__ == '__main__':
+    unittest.main()
