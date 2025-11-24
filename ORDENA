@@ -1,0 +1,24 @@
+def ordenar_sem_repeticao(lista):
+    lista_sem_repetidos = []
+    for item in lista:
+        if item not in lista_sem_repetidos:
+            lista_sem_repetidos.append(item)
+    lista_sem_repetidos.sort()
+    return lista_sem_repetidos
+
+##TESTE
+
+import unittest
+
+class TestOrdenarSemRepeticao(unittest.TestCase):
+    def test_lista_com_repetidos(self):
+        self.assertEqual(ordenar_sem_repeticao([3, 1, 2, 3, 2]), [1, 2, 3])
+    
+    def test_lista_sem_repetidos(self):
+        self.assertEqual(ordenar_sem_repeticao([5, 2, 9]), [2, 5, 9])
+    
+    def test_lista_vazia(self):
+        self.assertEqual(ordenar_sem_repeticao([]), [])
+
+if __name__ == '__main__':
+    unittest.main()
