@@ -1,0 +1,83 @@
+# 1. Somar 5 números
+numeros = []
+for i in range(5):
+    n = float(input(f"Digite o {i+1}º número: "))
+    numeros.append(n)
+print("Soma dos números:", sum(numeros))
+
+print("\n" + "-"*30 + "\n")
+
+# 2. Maior e menor entre 4 números
+numeros = []
+for i in range(4):
+    n = float(input(f"Digite o {i+1}º número: "))
+    numeros.append(n)
+print("Maior número:", max(numeros))
+print("Menor número:", min(numeros))
+
+print("\n" + "-"*30 + "\n")
+
+# 3. Contar vogais em uma palavra
+palavra = input("Digite uma palavra: ")
+vogais = "aeiouAEIOU"
+contagem = sum(1 for letra in palavra if letra in vogais)
+print("Número de vogais na palavra:", contagem)
+
+print("\n" + "-"*30 + "\n")
+
+# 4. Mostrar apenas números pares entre 6 números
+numeros = []
+for i in range(6):
+    n = int(input(f"Digite o {i+1}º número: "))
+    numeros.append(n)
+pares = [num for num in numeros if num % 2 == 0]
+print("Números pares digitados:", pares)
+
+print("\n" + "-"*30 + "\n")
+
+# 5. Média de 4 provas
+notas = []
+for i in range(4):
+    n = float(input(f"Digite a nota da prova {i+1}: "))
+    notas.append(n)
+media = sum(notas)/len(notas)
+print("Média das notas:", media)
+
+print("\n" + "-"*30 + "\n")
+
+# 6. Tabuada de um número
+numero = int(input("Digite um número para ver a tabuada: "))
+print(f"Tabuada do {numero}:")
+for i in range(1, 11):
+    print(f"{numero} x {i} = {numero*i}")
+
+print("\n" + "-"*30 + "\n")
+
+# 7. Números de 1 até N
+N = int(input("Digite um número N: "))
+print("Números de 1 até N:", list(range(1, N+1)))
+
+print("\n" + "-"*30 + "\n")
+
+# 8. Palavra ao contrário
+palavra = input("Digite uma palavra: ")
+print("Palavra ao contrário:", palavra[::-1])
+
+print("\n" + "-"*30 + "\n")
+
+# 9. Verificar múltiplo de 3
+numero = int(input("Digite um número: "))
+if numero % 3 == 0:
+    print(f"{numero} é múltiplo de 3")
+else:
+    print(f"{numero} não é múltiplo de 3")
+
+print("\n" + "-"*30 + "\n")
+
+# 10. Ordenar 3 nomes em ordem alfabética
+nomes = []
+for i in range(3):
+    nome = input(f"Digite o {i+1}º nome: ")
+    nomes.append(nome)
+nomes.sort()
+print("Nomes em ordem alfabética:", nomes)
