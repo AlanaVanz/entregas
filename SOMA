@@ -1,0 +1,23 @@
+def soma_digitos(n):
+    n = abs(n)  # garante que o número seja positivo
+    soma = 0
+    for digito in str(n):
+        soma += int(digito)
+    return soma
+
+##TESTE
+
+import unittest
+
+class TestSomaDigitos(unittest.TestCase):
+    def test_numero_positivo(self):
+        self.assertEqual(soma_digitos(123), 6)  # 1+2+3=6
+
+    def test_numero_zero(self):
+        self.assertEqual(soma_digitos(0), 0)
+    
+    def test_numero_negativo(self):
+        self.assertEqual(soma_digitos(-456), 15)  # 4+5+6=15
+
+if __name__ == '__main__':
+    unittest.main()
