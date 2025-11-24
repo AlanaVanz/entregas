@@ -1,0 +1,25 @@
+def media_lista(lista):
+    if len(lista) == 0:
+        return None
+    soma = 0
+    for num in lista:
+        soma += num
+    return soma / len(lista)
+
+
+##TESTE
+
+import unittest
+
+class TestMediaLista(unittest.TestCase):
+    def test_lista_com_numeros(self):
+        self.assertEqual(media_lista([1, 2, 3, 4, 5]), 3.0)
+    
+    def test_lista_vazia(self):
+        self.assertIsNone(media_lista([]))
+    
+    def test_lista_com_um_elemento(self):
+        self.assertEqual(media_lista([10]), 10.0)
+
+if __name__ == '__main__':
+    unittest.main()
